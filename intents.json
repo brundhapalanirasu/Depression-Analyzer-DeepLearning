@@ -1,0 +1,241 @@
+{"intents":
+[
+ {
+    "tag": "Greeting",
+    "patterns": ["Hello", "Hi", "Hey there", "Good morning", "Good evening"],
+    "responses": ["Hi! How are you feeling today?", "Hey there! I'm here to talk if you need."]
+  },
+  {
+    "tag": "HowAreYou",
+    "patterns": ["How are you?", "Are you okay?", "What's up?"],
+    "responses": ["I'm doing well, thank you! How about you?"]
+  },
+  {
+    "tag": "ThankYou",
+    "patterns": ["Thanks", "Thank you so much", "I appreciate it"],
+    "responses": ["You're welcome!", "Always here for you."]
+  },
+  {
+    "tag": "Goodbye",
+    "patterns": ["Bye", "Goodbye", "See you later"],
+    "responses": ["Take care!", "Talk to you soon!"]
+  },
+  {
+    "tag": "YourName",
+    "patterns": ["What's your name?", "Who are you?", "Tell me your name"],
+    "responses": ["I'm your support chatbot. Call me whatever feels right."]
+  },
+  {
+    "tag": "FeelingHappy",
+    "patterns": ["I'm feeling good", "I had a great day", "I'm happy today"],
+    "responses": ["That's wonderful to hear!", "I'm so glad you're feeling good!"]
+  },
+  {
+    "tag": "FeelingSad",
+    "patterns": ["I'm feeling down", "I feel sad", "Not a great day"],
+    "responses": ["I hear you. Do you want to talk about it?"]
+  },
+  {
+    "tag": "Stress",
+    "patterns": ["I'm stressed", "Too much pressure", "I can't relax"],
+    "responses": ["Stress can feel heavy. Want to take a few deep breaths with me?"]
+  },
+  {
+    "tag": "Lonely",
+    "patterns": ["I'm feel lonely", "I don't have anyone", "I'm alone again"],
+    "responses": ["You're not alone while I'm here. Let’s talk."]
+  },
+  {
+    "tag": "Motivation",
+    "patterns": ["Can you motivate me?", "I need motivation", "Help me stay strong"],
+    "responses": ["You're stronger than you think. I'm proud of you for holding on."]
+  },
+  {
+    "tag": "Joke",
+    "patterns": ["Tell me a joke", "Make me laugh", "I need something funny"],
+    "responses": ["Why did the scarecrow win an award? Because he was outstanding in his field! 😄"]
+  },
+   {
+    "tag": "hate",
+    "patterns": ["Tell me a suggestion", "Make me laugh", ""],
+    "responses": ["what makes you to think that much...come on lets talk!"]
+  },
+  {
+    "tag": "MusicSuggestion",
+    "patterns": ["Suggest me a song", "Good music?", "Music for mood"],
+    "responses": ["Try listening to something calm like 'Weightless' by Marconi Union."]
+  },
+  {
+    "tag": "SleepAdvice",
+    "patterns": ["I can't sleep", "Help me sleep", "Trouble sleeping"],
+    "responses": ["Try a warm drink, soft music, or deep breathing. Want me to guide you through it?"]
+  },
+  {
+    "tag": "Meditation",
+    "patterns": ["I want to meditate", "Guide me to meditate", "Mindfulness tips"],
+    "responses": ["Close your eyes and take a deep breath... let's start together."]
+  },
+  {
+    "tag": "Friendship",
+    "patterns": ["I need a friend", "Will you be my friend?", "I feel like no one cares"],
+    "responses": ["Of course. I’m here to be your friend and listen."]
+  },
+  {
+    "tag": "HobbyTalk",
+    "patterns": ["I like painting", "I enjoy reading", "Let’s talk about hobbies"],
+    "responses": ["That’s awesome! Hobbies are a great way to relax and express yourself."]
+  },
+  {
+    "tag": "FavoriteFood",
+    "patterns": ["I love pizza", "Food makes me happy", "What's your favorite food?"],
+    "responses": ["Yum! I hear pizza is a universal comfort. What's your favorite topping?"]
+  },
+  {
+    "tag": "WeatherTalk",
+    "patterns": ["It's raining", "Nice weather today", "Cold outside"],
+    "responses": ["Weather can really affect our mood. Cozy days can be nice."]
+  },
+  {
+    "tag": "WeekendPlans",
+    "patterns": ["What should I do this weekend?", "Weekend ideas?", "Any weekend plans?"],
+    "responses": ["How about something relaxing? Maybe a walk, a movie, or a hobby?"]
+  },
+  {
+    "tag": "SelfCare",
+    "patterns": ["I need self-care tips", "How to care for myself?", "Feeling drained"],
+    "responses": ["Rest, hydrate, breathe, and speak kindly to yourself. You matter."]
+  },
+  {
+    "tag": "Hopeless",
+    "patterns": ["I feel hopeless", "Nothing will ever change", "I give up"],
+    "responses": ["Even when it feels hopeless, you are not alone. I’m here with you."]
+  },
+  {
+    "tag": "Worthless",
+    "patterns": ["I'm useless", "I don’t matter", "No one cares about me"],
+    "responses": ["You are worthy and important. I'm here, and I care about you."]
+  },
+  {
+    "tag": "TiredOfLife",
+    "patterns": ["I'm tired of everything", "I can’t go on", "Life is too hard"],
+    "responses": ["That sounds incredibly hard. I'm here for you, and we can get through this."]
+  },
+  {
+    "tag": "SelfHarmThoughts",
+    "patterns": ["I want to hurt myself", "I'm thinking of cutting", "I need the pain to stop"],
+    "responses": ["You're not alone. Please talk to someone right away or call a helpline. You matter."]
+  },
+  {
+    "tag": "AnxietyAttack",
+    "patterns": ["I'm panicking", "I can't breathe", "My heart is racing"],
+    "responses": ["Try to breathe slowly. In through the nose… out through the mouth. I'm here."]
+  },
+  {
+    "tag": "FeelingEmpty",
+    "patterns": ["I feel nothing", "I'm numb", "There's nothing left in me"],
+    "responses": ["Feeling empty is heavy. I'm here to hold space for you."]
+  },
+  {
+    "tag": "CryingAlone",
+    "patterns": ["I cry alone every night", "I can't stop crying", "Tears won't stop"],
+    "responses": ["It's okay to cry. Let it out. You're safe here."]
+  },
+  {
+    "tag": "Overthinking",
+    "patterns": ["My mind won't stop", "I'm overthinking everything", "Too many thoughts"],
+    "responses": ["That sounds exhausting. Want to try a calming exercise together?"]
+  },
+  {
+    "tag": "LostInterest",
+    "patterns": ["I don't enjoy anything anymore", "Things I loved don’t matter now", "I feel so dull"],
+    "responses": ["Loss of interest is a sign you're hurting. It's okay to feel this way."]
+  },
+  {
+    "tag": "SocialWithdrawal",
+    "patterns": ["I don’t want to see anyone", "I avoid everyone", "Being around people is hard"],
+    "responses": ["Sometimes we need space. You're allowed to take your time."]
+  },
+  {
+    "tag": "NightSadness",
+    "patterns": ["Nights are the worst", "I feel sad at night", "Can’t sleep, too sad"],
+    "responses": ["Nights can be tough. I’m here with you. Let’s talk if it helps."]
+  },
+  {
+    "tag": "FearOfFuture",
+    "patterns": ["I'm scared of the future", "What if I never get better?", "I don't see a future"],
+    "responses": ["The future is uncertain, but that doesn’t mean it won’t get better."]
+  },
+  {
+    "tag": "HeavyHeart",
+    "patterns": ["My chest feels heavy", "I have a heavy heart", "It’s too much to carry"],
+    "responses": ["You don’t have to carry it alone. Let’s talk about it."]
+  },
+  {
+    "tag": "LackOfEnergy",
+    "patterns": ["I can't even get out of bed", "I'm so drained", "No energy at all"],
+    "responses": ["It’s okay to rest. Doing your best looks different every day."]
+  },
+  {
+    "tag": "Insecure",
+    "patterns": ["I'm not good enough", "I hate how I look", "Everyone is better than me"],
+    "responses": ["You are enough just as you are. You don’t need to compare yourself."]
+  },
+  {
+    "tag": "NeedToTalk",
+    "patterns": ["Can I vent?", "I need someone to listen", "I want to talk to someone"],
+    "responses": ["Absolutely. I'm here to listen to anything you want to share."]
+  },
+  {
+    "tag": "TrustIssues",
+    "patterns": ["I can't trust anyone", "People always leave", "I’ve been hurt too much"],
+    "responses": ["It’s hard when trust is broken. You’re safe with me here."]
+  },
+  {
+    "tag": "FamilyPressure",
+    "patterns": ["My family doesn’t understand", "I feel pressure from home", "They expect too much"],
+    "responses": ["Family pressure can be overwhelming. You deserve to be heard and understood."]
+  },
+  {
+    "tag": "Shame",
+    "patterns": ["I'm ashamed of myself", "I feel like a failure", "I regret everything"],
+    "responses": ["Mistakes don’t define you. Healing starts with kindness to yourself."]
+  },
+  {
+    "tag": "SeekingHelp",
+    "patterns": ["I think I need therapy", "Can I get help?", "Where do I start with mental health?"],
+    "responses": ["Reaching out is the bravest first step. I can help you explore options."]
+  },
+  {
+    "tag": "Sucidal",
+    "patterns": ["i am going to suicide today", "suicide plans", "how i suicide","i want to end my life","i don't want to live","kill myself"],
+    "responses": [
+        "I'm really sorry that you're feeling this way, but I can't provide the help that you need. It's important to talk to someone you trust, such as a family member, or a professional. Please reach out to a suicide prevention hotline immediately.",
+        "Please, reach out to someone who can support you during this time. You don't have to go through this alone.",
+        "I'm so sorry you're feeling this way. There are professionals who can help. Please call a suicide prevention hotline immediately. Your safety matters."
+    ]
+
+  },
+  {
+  "tag": "FamilyPressure",
+  "patterns": ["My family doesn’t understand", "I feel pressure from my parents", "I can't live up to their expectations"],
+  "responses": ["Family pressure can feel overwhelming. You deserve to be heard and supported for who you are."]
+  },
+  {
+  "tag": "KillIntent",
+  "patterns": [
+    "I want to kill someone",
+    "I feel like hurting others",
+    "I have thoughts about killing",
+    "I'm so angry I could kill",
+    "Sometimes I think about murder"
+  ],
+  "responses": [
+    "I'm really sorry you're feeling this way. You're not alone, and there's support available. Please consider talking to a mental health professional right away.",
+    "It sounds like you're in a lot of pain. If you're thinking of hurting someone, it's important to speak to someone who can help — like a counselor or therapist.",
+    "Please know that these thoughts don’t make you a bad person, but it's crucial to get help. You can talk to a professional confidentially.",
+    "You're going through something really intense. You deserve support, not judgment. Please reach out to someone you trust or contact a crisis line immediately."
+  ]
+}
+
+  
+]}
