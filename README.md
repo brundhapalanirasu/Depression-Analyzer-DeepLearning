@@ -1,6 +1,20 @@
 # Depression Analyzer using Deep Learning 🧠
 
-This project aims to detect and analyze depression levels in **women and children** using **deep learning techniques**. The system can process **text inputs**, **audio signals**, or **facial expressions** to identify signs of depression and provide actionable feedback.
+Mental health is a crucial aspect of overall well-being, especially for vulnerable groups such as women and children. With the rise in digital interactions and increased awareness of psychological challenges, there is a growing need for accessible, technology-driven mental health tools.
+
+This project, **Depression Analyzer using Deep Learning**, is built with the vision of early detection and support. It utilizes cutting-edge AI models to analyze multiple data inputs such as:
+
+* **Text responses** from users (e.g., answering a questionnaire or casual chat),
+* **Audio inputs**, focusing on tone, pitch, and emotional cues,
+* **Facial expressions** captured via image or video analysis.
+
+The deep learning models are trained on validated datasets and psychological scoring systems like **PHQ-9**, ensuring the analysis aligns with clinical standards. Based on the results, the system generates a depression level score and provides one or more of the following:
+
+* Suggests reaching out to a licensed professional,
+* Offers interactive or gamified tasks to uplift mood,
+* Connects to emergency mental health helplines.
+
+This tool is designed to be part of a **safe, virtual mental wellness environment**, where users can interact anonymously and receive non-judgmental support. Though it's **not a diagnostic tool**, it can serve as a first step toward seeking help or raising awareness about one's mental state.
 
 ## 💡 Features
 - Detects depression severity using trained deep learning models.
