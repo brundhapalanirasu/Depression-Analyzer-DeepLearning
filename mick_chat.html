@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mick Voice Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/static/bot1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .chat-container {
+            width: 500px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+		/* Profile button styles */
+		.profile-btn {
+			position: absolute;
+			top: 20px;
+			left: 780px;
+			background: none;
+			border: none;
+			cursor: pointer;
+			z-index: 1000;
+		}
+
+		.profile-icon {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			border: 2px solid #fff;
+		}
+
+		/* Modal styles */
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1500;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		.modal-content {
+			background-color: #fff;
+			margin: 10% auto;
+			padding: 20px;
+			border-radius: 10px;
+			width: 80%;
+			max-width: 500px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+			text-align: left;
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 24px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.close:hover {
+			color: black;
+		}
+		.logout-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+
+        .logout-btn:hover {
+            background-color: #cc0000;
+        }
+        .logout-btn1{
+                background-color: #cc0000;
+                padding: 10px;
+                position: relative;
+                top: -223px;
+                border-radius: 8px;
+                left: -406px;
+                color: white;
+                text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="/chatbot" class="logout-btn">Back</a>
+	<br>
+    <a href="/feedback" class="logout-btn1">Feed Back Form</a>
+
+
+	<button class="profile-btn" onclick="openProfileModal()">
+		<img src="static/bot2.jpg" alt="Profile" class="profile-icon">
+	</button>
+
+	<div id="profileModal" class="modal">
+		<div class="modal-content">
+			<span class="close" onclick="closeProfileModal()">&times;</span>
+			<h3>User Information</h3>
+			<div id="profile-info">Loading...</div>
+		</div>
+	</div>
+    <div class="chat-container">
+        <div id="chat-box" class="chat-box">
+            <p><strong>Bot:</strong> Hey buddy! Tap the mic and talk to me.</p>
+        </div>
+        <button onclick="startListening()">🎤 Talk to Mick</button>
+    </div>
+
+    <script>
+        function startListening() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                const userSpeech = event.results[0][0].transcript;
+                updateChat(userSpeech);
+            };
+
+            recognition.onerror = function(event) {
+                alert('Error occurred in recognition: ' + event.error);
+            };
+        }
+
+        function updateChat(message) {
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+
+            fetch('/mick_chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const reply = data.reply;
+                chatBox.innerHTML += `<p><strong>Mick:</strong> ${reply}</p>`;
+
+                // Mick's voice
+                const synth = window.speechSynthesis;
+                const utterThis = new SpeechSynthesisUtterance(reply);
+                utterThis.pitch = 0.8;
+                utterThis.rate = 0.9;
+                synth.speak(utterThis);
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        }
+		function openProfileModal() {
+			document.getElementById("profileModal").style.display = "block";
+
+			// Fetch profile/dataset info (modify this endpoint to your actual route)
+			fetch('/profile-info')
+				.then(res => res.json())
+				.then(data => {
+					const infoContainer = document.getElementById('profile-info');
+					infoContainer.innerHTML = ''; // Clear previous content
+					// Loop through data and show it nicely
+					data.forEach(([key, value]) => {
+						infoContainer.innerHTML += `<p><strong>${key}:</strong> ${value}</p>`;
+					});
+
+				})
+				.catch(error => {
+					document.getElementById('profile-info').innerHTML = 'Failed to load data.';
+				});
+		}
+
+		function closeProfileModal() {
+			document.getElementById("profileModal").style.display = "none";
+		}
+    </script>
+</body>
+</html>

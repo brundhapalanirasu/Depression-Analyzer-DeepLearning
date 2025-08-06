@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register/Login</title>
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url('static/register.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    #register-form {
+        background-color: #00000087;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        margin: 3rem auto;
+    }
+
+    #register-form h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 0.85rem;
+        margin-bottom: 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.75rem;
+        background-color: #f9fafb;
+        font-size: 1rem;
+        box-sizing: border-box;
+        transition: border 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border-color: #6366f1;
+        background-color: #fff;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 0.85rem;
+        background-color: #6366f1;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #4f46e5;
+    }
+
+    p {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.95rem;
+        color: #6b7280;
+    }
+
+    p a {
+        color: #6366f1;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    p a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+</head>
+<body>
+	<a href="/view_feedback">
+		<button type="button">View Feedback</button>
+	</a>
+
+    <div id="register-form">
+        <form action="/register" method="post">
+            <h2>Register</h2>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="email" id="usermail" name="usermail" placeholder="Email">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <input type="text" id="age" name="age" placeholder="Age">
+            <input type="text" id="number" name="number" placeholder="Mobile Number">
+            <input type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="/login">Login here</a></p>
+    </div>
+    
+
+    <script>
+        // JavaScript function to toggle between register and login forms
+        function toggleForm() {
+            var registerForm = document.getElementById('register-form');
+            var loginForm = document.getElementById('login-form');
+            
+            if (registerForm.style.display === "none") {
+                registerForm.style.display = "block";
+                loginForm.style.display = "none";
+            } else {
+                registerForm.style.display = "none";
+                loginForm.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
